@@ -1,0 +1,113 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+h1 {
+  text-align: center;
+  background: green;
+  color: blue;
+  margin: 0;
+}
+#sayings {
+  background: brown;
+  padding: 40px 0px 60px 2px;
+  font-size: 25px;
+  color: red;
+  width: 100%;
+  text-align: left;
+}
+#strtbtn {
+  padding: 50px;
+  color: white;
+  text-align: center;
+  background: red;
+  margin: 0;
+}
+#strtbtn-link {
+  border: 1px solid green;
+  border-radius: 20px;
+  padding: 10px;
+  color: green;
+  background: brown;
+  font-size: 20px;
+}
+#strtbtn-link:active {
+  background: black;
+}
+#status {
+  display: none;
+  text-align: center;
+}
+#scr {
+  border: 1px solid #d3d3d3;
+  background: red;
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  display: none;
+}
+#bird {
+  width: 45px;
+  height: 30px;
+  margin-top: 10px;
+  position: absolute;
+  margin-left: 150px;
+  padding: 0;
+}
+#eagle {
+  width: 75px;
+  height: 45px;
+  margin-top: 105px;
+  position: absolute;
+  margin-left: 285px;
+  padding: 0;
+}
+#evil {
+  width: 80px;
+  height: 150px;
+  margin-top: 190px;
+  position: absolute;
+  margin-left: 285px;
+  padding: 0;
+}
+#animate {
+  opacity: 0.5;
+  margin-top: 330px;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  background: orange;
+}
+.controller {
+  border: 1px solid gold;
+  border-radius: 50px;
+  margin-top: 470px;
+  padding: 20px;
+  position: absolute;
+  display: none;
+  background: white;
+}
+.controller:active {
+  background: brown;
+}
+.controller img {
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
+#up {
+  left: 100px;
+}
+#down {
+  left: 200px;
+}
+#overscr {
+  text-align: center;
+  display: none;
+}
+#overscr h2 {
+  color: red;
+}
