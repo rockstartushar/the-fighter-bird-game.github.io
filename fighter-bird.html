@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!--  https://rockstartushar.github.io/the-fighter-bird-game.github.io/ -->    
+  <title>The Fighter Bird Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta charset=UTF-8 />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="fighter-bird.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 </head>
-<body>
-  <div id="before-over">
-    <h1>The Fighter Bird</h1>
-    <p id="status">
-      <b>Keep playing..</b>
-    </p>
-    <div id="sayings">
-      <div id="eagle-said">
-        <b>Eagle: </b>I will eat you!!
-        😠
-      </div>
-      <div id="evil-said">
-        <b>Evil: </b> I will kill you!!🎃
-      </div>
-      <div id="bird-said">
-        <b>Bird: </b> You can't even touch me..🐦
-      </div>
+<body onkeydown="keyController(event)">
+  <header>
+    <h1>The Fighter Bird Game &#128038;</h1>
+  </header>
+  <section id="sayings">
+    <div id="eagle-said">
+      <b>Eagle: </b>I will eat you!!&#129413;
     </div>
+    <div id="evil-said">
+      <b>Evil: </b> I will kill you!!&#128520;
+    </div>
+    <div id="bird-said">
+      <b>Bird: </b> You can't even touch me..&#128038;
+    </div>
+  </section>
+  <section>
     <div id="strtbtn">
       <h2>Read before Starting Game!!</h2><p>
         Hey!! In this arena, you see a bird(you) which is required to keep moving without getting caught by the eagle or evil.
@@ -33,31 +32,36 @@
       <br /><br />
       <a id="strtbtn-link">click to play..</a>
     </div>
-    <div id="container">
-      <div id="scr">
-        <span><b>Score:</b> </span>
-        <span id="time">
-          0
-        </span>
-        <div id="animate"></div>
-        <img src="beagle.png" class="items villain" id="eagle" alt="eagle" />
-        <img src="bird.png" class="items" id="bird" alt="bird" /> <img src="evil.png" class="items" id="evil" alt="evil" />
-      </div>
-      <a id="up" class=" controller"><img src="up.png" alt="up" /></a>
-      <a id="down" class=" controller"><img src="down.png" alt="down" /></a>
+  </section>
+  <section id="container">
+    <section id="status">
+      <b>Danger!</b>
+    </section>
+    <div id="scr">
+      <span><b>Score:</b> </span>
+      <span id="time">0</span>
+    <div id="animate"></div>
+      <img src="beagle.png" class="items villain" id="eagle" alt="eagle" />
+      <img src="bird.png" class="items" id="bird" alt="bird" /> <img src="evil.png" class="items" id="evil" alt="evil" />
     </div>
-  </div>
-  <div id="overscr">
+    <section id="controllerSec">
+      <a id="up"><div class="controller"><img src="up.png" alt="up" /></div></a>
+      <a id="down"><div  class="controller"><img src="down.png" alt="down" /></div></a>
+    </section>
+  </section>
+  <section id="overscr">
+    <hr id="hrStyles">
     <div id="over-status">
       <b>Game Over!!</b>
     </div>
     <h2>Your Score:</h2><p id="score"></p>
-  </div>
-  <script src="node_modules/jquery/dist/jquery.slim.min.js">
-  </script>
-  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js">
-  </script>
+    <a class="endBtn" id="shareBtn" href= "whatsapp://send?text=I enjoyed🤩🤩 playing this amazing lockdown game💖💖..check your concentration and focus level🤷‍♂🤔🤔 https://rockstartushar.github.io/the-fighter-bird-game.github.io/ ..🙏have fun.. " data-action="share/whatsapp/share" target="_blank"> Share on whatsapp!!</a><br><br><br>
+    <a class="endBtn" id="playAgain" href="">Play Again</a>
+  </section>
+  <footer>
+      All &copy;copyright reserved to Tushar Dangayach.
+  </footer>
+  
   <script src="fighter-bird.js" type="text/javascript" charset="utf-8">
   </script>
 </body>
