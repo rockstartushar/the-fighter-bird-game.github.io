@@ -1,27 +1,5 @@
-$("#strtbtn-link").click(function() {
-  gameplay();
-});
-$("#strtbtn-link").click(function(e) {
-  var i = 1;
-  setInterval(function () {
-    $("#time").html(i);
-    i++;
-  }, 100);
-});
-$("#strtbtn-link").click(function() {
-  var elem1 = document.getElementById("animate");
-  var op = 0;
-  var id = setInterval(frame, 100);
-  function frame() {
-    if (op == 1) {
-      op = 0;
-    } else {
-      op += 0.2;
-      elem1.style.opacity = op;
-    }
-  }
-});
-
+const ground = document.getElementById("animate");
+const bird = document.getElementById("bird");
 $('#up').click(function() {
   birdUp();
 });
@@ -34,21 +12,64 @@ function pxToNum(px) {
     pos));
   return numval;
 }
-function birdDown() {
-  var elem = document.getElementById("bird");
-  var marginval = elem.style.marginTop;
-  var numval = pxToNum(marginval);
-  numval += 5;
-  elem.style.marginTop = numval+"px";
-}
 function birdUp() {
-  var elem = document.getElementById("bird");
-  var marginval = elem.style.marginTop;
+  var marginval = bird.style.marginTop;
   var numval = pxToNum(marginval);
   numval -= 5;
-  elem.style.marginTop = numval+"px";
+  bird.style.marginTop = numval+"px";
 }
+function birdDown(checkGravity) {
+  var birdMarginTopVal = bird.style.marginTop;
+  var numval = pxToNum(birdMarginTopVal);
+  if(checkGravity=="gravity"){
+    numval += 1;
+    bird.style.marginTop = numval+"px";
+  } else {
+    numval += 5;
+    bird.style.marginTop = numval+"px";
+  }
+}
+function keyController(event) {
+  if(event.key == "ArrowUp") {
+     console.log("Up");
+    birdUp();
+  } else {
+    console.log("down");
+    birdDown();
+  }
+}
+$("#strtbtn-link").click(function() {
+  gameplay();
+  var i = 1;
+  setInterval(function () {
+    $("#time").html(i);
+    i++;
+  }, 100);
+  var gravity = setInterval(gravity, 1000);
+  function gravity() {
+    birdDown("gravity");
+  }
+});
+/*$("#strtbtn-link").click(function() {
+  var op = 0;
+  var id = setInterval(frame, 100);
+  function frame() {
+    if (op == 1) {
+      op = 0;
+    } else {
+      op += 0.2;
+      ground.style.opacity = op;
+    }
+  }
+});
+*/
+
+
 function gameplay() {
+  $("header").hide();
+  $('body').css({
+    backgroundColor: 'white'
+  });
   $('#strtbtn').css({
     display: 'none'
   });
@@ -56,16 +77,15 @@ function gameplay() {
     display: 'none'
   });
   $('#status').css({
-    display: 'inline'
+    display: 'block',
+    height: '5%',
   });
+  $("footer").hide();
   $('#scr').css({
     display: 'inline'
   });
-  $('#up').css({
-    display: 'inline'
-  });
-  $('#down').css({
-    display: 'inline'
+  $('#controllerSec').css({
+    display: 'grid'
   });
   var elem = document.getElementById("scr").children;
   var elem1 = document.getElementById("bird");
@@ -170,20 +190,18 @@ function gameplay() {
     }
   }
   function showScore() {
+    $("header").show();
     $('#status').css({
       display: 'none'
     });
     $('#scr').css({
       display: 'none'
     });
-    $('#up').css({
-      display: 'none'
-    });
-    $('#down').css({
+    $('#controllerSec').css({
       display: 'none'
     });
     $('#overscr').css({
-      display: 'inline'
+      display: 'block'
     });
     clearInterval(moveEagle);
     clearInterval(moveEvil);
