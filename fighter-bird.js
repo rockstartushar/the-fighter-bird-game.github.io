@@ -1,5 +1,21 @@
 const ground = document.getElementById("animate");
 const bird = document.getElementById("bird");
+const start_btn = document.getElementById("strtbtn-link");
+start_btn.addEventListener("click", function () {
+  audio1 = document.createElement("AUDIO");
+  document.body.appendChild(audio1);
+  audio1.src = "fightbg.mp3";
+  audio1.play();
+  audio1.loop=true;
+});
+function playBirdOver() {
+  audio1.pause();
+  audio1.remove();
+  audio1 = document.createElement("AUDIO");
+  document.body.appendChild(audio1);
+  audio1.src = "birdover.mp3";
+  audio1.play();
+}
 $('#up').click(function() {
   birdUp();
 });
@@ -190,6 +206,7 @@ function gameplay() {
     }
   }
   function showScore() {
+    playBirdOver();
     $("header").show();
     $('#status').css({
       display: 'none'
