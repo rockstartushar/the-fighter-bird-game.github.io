@@ -1,25 +1,27 @@
 body {
   padding: 0;
   margin: 0;
-  background: white;
+  font-size: 150%;
+  background: red;
+  overflow: none;
+}
+header {
+  background-color: white;
 }
 h1 {
   text-align: center;
-  background: green;
   color: blue;
   margin: 0;
 }
 #sayings {
   background: brown;
-  padding: 40px 0px 60px 2px;
-  font-size: 25px;
+  padding: 40px 10% 60px 10%;
   color: red;
-  width: 100%;
+  width: 80%;
   text-align: left;
 }
 #strtbtn {
   padding: 50px;
-  color: white;
   text-align: center;
   background: red;
   margin: 0;
@@ -28,15 +30,24 @@ h1 {
   border: 1px solid green;
   border-radius: 20px;
   padding: 10px;
-  color: green;
+  color: white;
+  background-color: yellow;
+}
+#strtbtn-link:hover {
   background: brown;
-  font-size: 20px;
+  border-radius: 1px solid yellow;
 }
 #strtbtn-link:active {
-  background: black;
+  background: brown;
+  border-radius: 1px solid yellow;
+}
+#container {
+  height: 100%;
 }
 #status {
   display: none;
+  background-color: black;
+  color: red;
   text-align: center;
 }
 #scr {
@@ -46,6 +57,7 @@ h1 {
   height: 400px;
   position: absolute;
   margin: 0;
+  padding: 0;
   overflow: hidden;
   display: none;
 }
@@ -80,15 +92,26 @@ h1 {
   height: 30px;
   position: absolute;
   background: orange;
+  animation: run 1s infinite;
+}
+#controllerSec {
+  display: none;
+  height: 20%;
+  text-align: center;
+    bottom: 0;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+  grid-template-areas: 'footer footer';
 }
 .controller {
-  border: 1px solid gold;
-  border-radius: 50px;
-  margin-top: 470px;
-  padding: 20px;
-  position: absolute;
-  display: none;
-  background: white;
+  padding: 20%;
+  height: 100%;
+  border: 1px solid gold; */
+    /* border-radius: 50px; */
+    /* margin-top: 470px; */
+    /* position: fixed; */
+  background: blue;
 }
 .controller:active {
   background: brown;
@@ -98,16 +121,49 @@ h1 {
   width: 20px;
   margin: 0;
 }
-#up {
-  left: 100px;
-}
-#down {
-  left: 200px;
+#hrStyles {
+  border: 4px solid darkblue;
+  border-radius: 90px;
+  width: 53%;
 }
 #overscr {
-  text-align: center;
   display: none;
+  text-align: center;
 }
 #overscr h2 {
   color: red;
+}
+.endBtn {
+  border: 1px solid green;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  background-color: orange;
+}
+.endBtn:hover {
+  background: brown;
+  border-radius: 1px solid yellow;
+}
+.endBtn:active {
+  background: brown;
+  border-radius: 1px solid yellow;
+}
+footer {
+  padding: 2%;
+  text-align: center;
+  background-color: brown;
+  bottom: 0;
+}
+
+@keyframes run {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
 }
