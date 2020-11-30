@@ -31,7 +31,7 @@ h1 {
   border-radius: 20px;
   padding: 10px;
   color: white;
-  background-color: yellow;
+  background-color: orange;
 }
 #strtbtn-link:hover {
   background: brown;
@@ -134,6 +134,7 @@ h1 {
   color: red;
 }
 .endBtn {
+  z-index: 5;
   border: 1px solid green;
   border-radius: 20px;
   padding: 10px;
