@@ -3,8 +3,8 @@
 <head>
   <!--  https://rockstartushar.github.io/the-fighter-bird-game.github.io/ -->    
   <title>The Fighter Bird Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta charset=UTF-8 />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' >
+  <meta charset=UTF-8 />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="fighter-bird.css" type="text/css" media="all" />
@@ -30,16 +30,29 @@
         Hey!! In this arena, you see a bird(you) which is required to keep moving without getting caught by the eagle or evil.
       </p>
       <br /><br />
-      <a id="strtbtn-link">click to play..</a>
+      <a id="strtbtn-link" onclick="gameplay();">click to play..</a>
     </div>
+  </section>
+  <section id="overscr">
+    <hr id="hrStyles">
+    <div id="over-status">
+      <b>Game Over!!</b>
+    </div>
+    <h2>Your Score:</h2><p id="score"></p>
+    <a class="endBtn" id="shareBtn" href= "whatsapp://send?text=I enjoyed🤩🤩 playing this amazing lockdown game💖💖..check your concentration and focus level🤷‍♂🤔🤔 https://rockstartushar.github.io/the-fighter-bird-game.github.io/ ..🙏have fun.. " data-action="share/whatsapp/share" target="_blank"> Share on whatsapp!!</a><br><br><br>
+    <a class="endBtn" id="playAgain" href="">Play Again</a><br><br><br>
+    <a class="endBtn" href="#container">View Your Game!</a><br><br><br><br><br><br>
+    
   </section>
   <section id="container">
     <section id="status">
       <b>Danger!</b>
     </section>
     <div id="scr">
+    <section id="scoreInScr">
       <span><b>Score:</b> </span>
       <span id="time">0</span>
+    </section>
     <div id="animate"></div>
       <img src="beagle.png" class="items villain" id="eagle" alt="eagle" />
       <img src="bird.png" class="items" id="bird" alt="bird" /> <img src="evil.png" class="items" id="evil" alt="evil" />
@@ -48,15 +61,6 @@
       <a id="up"><div class="controller"><img src="up.png" alt="up" /></div></a>
       <a id="down"><div  class="controller"><img src="down.png" alt="down" /></div></a>
     </section>
-  </section>
-  <section id="overscr">
-    <hr id="hrStyles">
-    <div id="over-status">
-      <b>Game Over!!</b>
-    </div>
-    <h2>Your Score:</h2><p id="score"></p>
-    <a class="endBtn" id="shareBtn" href= "whatsapp://send?text=I enjoyed🤩🤩 playing this amazing lockdown game💖💖..check your concentration and focus level🤷‍♂🤔🤔 https://rockstartushar.github.io/covid19-mask-game.github.io/ ..🙏have fun.. " data-action="share/whatsapp/share" target="_blank"> Share on whatsapp!!</a><br><br><br>
-    <a class="endBtn" id="playAgain" href="">Play Again</a>
   </section>
   <footer>
       All &copy;copyright reserved to Tushar Dangayach.
