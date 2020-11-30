@@ -41,7 +41,7 @@ function birdDown(checkGravity) {
     numval += 1;
     bird.style.marginTop = numval+"px";
   } else {
-    numval += 5;
+    numval += 10;
     bird.style.marginTop = numval+"px";
   }
 }
@@ -54,18 +54,7 @@ function keyController(event) {
     birdDown();
   }
 }
-$("#strtbtn-link").click(function() {
-  gameplay();
-  var i = 1;
-  setInterval(function () {
-    $("#time").html(i);
-    i++;
-  }, 100);
-  var gravity = setInterval(gravity, 1000);
-  function gravity() {
-    birdDown("gravity");
-  }
-});
+
 /*$("#strtbtn-link").click(function() {
   var op = 0;
   var id = setInterval(frame, 100);
@@ -110,6 +99,7 @@ function gameplay() {
   for (let i = 0; i < elem.length; i++) {
     elem[i].style.display = "block";
   }
+  var i = 1;
   var posV = 0,
   posH = screen.width,
   evilH = 150,
@@ -117,12 +107,20 @@ function gameplay() {
   max = 7,
   x = 0,
   y = 0;
+  var timer = setInterval(startTime, 100);
+  var gravity = setInterval(gravity, 100);
   var moveEagle = setInterval(eagleframe, 30);
   var moveEvil = setInterval(evilFrame, 30);
   var evilHeight = setInterval(evilHeight, 1000);
   var eagleHeight = setInterval(eagleHeight, 600);
-  var gameover = setInterval(
-    checkOverlap, 1000);
+  var gameover = setInterval(checkOverlap, 1000);
+  function gravity() {
+    birdDown("gravity");
+  }
+  function startTime() {
+    $("#time").html(i);
+    i++;
+  }
   function eagleframe() {
     if (posH == 0) {
       posH = screen.width;
@@ -208,18 +206,22 @@ function gameplay() {
   function showScore() {
     playBirdOver();
     $("header").show();
-    $('#status').css({
-      display: 'none'
+    $('#container').css({
+      opacity: '0.5',
+      width: '100%',
+      position: 'absolute'
     });
-    $('#scr').css({
-      display: 'none'
-    });
+    $("#scoreInScr").css({
+      visibility:'hidden'
+    })
     $('#controllerSec').css({
       display: 'none'
     });
     $('#overscr').css({
       display: 'block'
     });
+    clearInterval(startTime);
+    clearInterval(gravity);
     clearInterval(moveEagle);
     clearInterval(moveEvil);
     clearInterval(eagleHeight);
